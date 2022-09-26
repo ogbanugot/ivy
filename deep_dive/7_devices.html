@@ -50,8 +50,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../deep_dive.html">Deep Dive</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="0_navigating_the_code.html">Navigating the Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1_function_types.html">Function Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_backend_setting.html">Backend Setting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_function_wrapping.html">Function Wrapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_superset_behaviour.html">Superset Behaviour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_backend_setting.html">Backend Setting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5_containers.html">Containers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6_data_types.html">Data Types</a></li>
@@ -61,15 +61,16 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="8_inplace_updates.html">Inplace Updates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_formatting.html">Formatting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_function_arguments.html">Function Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11_submodule_helpers.html">Submodule Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_function_wrapping.html">Function Wrapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_formatting.html">Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_function_arguments.html">Function Arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12_docstrings.html">Docstrings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13_docstring_examples.html">Docstring Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="14_array_api_tests.html">Array API Tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="15_ivy_tests.html">Ivy Tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="16_ivy_frontends.html">Ivy Frontends</a></li>
 <li class="toctree-l2"><a class="reference internal" href="17_ivy_frontends_tests.html">Ivy Frontend Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="18_exception_handling.html">Exception Handling</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
@@ -84,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/device.html">Device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/elementwise.html">Elementwise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional/ivy/extensions.html">Extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/general.html">General</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/gradients.html">Gradients</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/layers.html">Layers</a></li>
@@ -102,19 +104,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../data_classes/container.html">Container</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data_classes/array.html">Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_classes/container.html">Container</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/converters.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/sequential.html">Sequential</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/initializers.html">Initializers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/norms.html">Norms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/module.html">Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/initializers.html">Initializers</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -171,7 +173,7 @@ and has simple logic in the constructor to verify that the string formatting is 
 When a backend is set, the <code class="code docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> is replaced with the backend-specific <a class="reference external" href="https://github.com/unifyai/ivy/blob/0b89c7fa050db13ef52b0d2a3e1a5fb801a19fa2/ivy/functional/backends/torch/__init__.py#L13">device class</a>.</p>
 <section id="device-module">
 <h2>Device Module<a class="headerlink" href="#device-module" title="Permalink to this heading"></a></h2>
-<p>The <a class="reference external" href="https://github.com/unifyai/ivy/blob/0b89c7fa050db13ef52b0d2a3e1a5fb801a19fa2/ivy/functional/ivy/device.py">device.py</a> module provides a variety of functions for working with devices.
+<p>The <a class="reference external" href="https://github.com/unifyai/ivy/blob/08ebc4d6d5e200dcbb8498b213538ffd550767f3/ivy/functional/ivy/device.py">device.py</a> module provides a variety of functions for working with devices.
 A few examples include
 <code class="code docutils literal notranslate"><span class="pre">ivy.get_all_ivy_arrays_on_dev</span></code> which gets all arrays which are currently alive on the specified device,
 <code class="code docutils literal notranslate"><span class="pre">ivy.dev</span></code> which gets the device for input array,
@@ -180,11 +182,11 @@ and <code class="code docutils literal notranslate"><span class="pre">ivy.num_gp
 which means that they do not directly modify arrays,
 as explained in the <a class="reference internal" href="1_function_types.html#function-types"><span class="std std-ref">Function Types</span></a> section.</p>
 <p>For example, the following are all convenience functions:
-<a class="reference external" href="https://github.com/unifyai/ivy/blob/0b89c7fa050db13ef52b0d2a3e1a5fb801a19fa2/ivy/functional/ivy/device.py#L215">ivy.total_mem_on_dev</a>, which gets the total amount of memory for a given device,
-<a class="reference external" href="https://github.com/unifyai/ivy/blob/0b89c7fa050db13ef52b0d2a3e1a5fb801a19fa2/ivy/functional/ivy/device.py#L326">ivy.dev_util</a>, which gets the current utilization (%) for a given device,
-<a class="reference external" href="https://github.com/unifyai/ivy/blob/0b89c7fa050db13ef52b0d2a3e1a5fb801a19fa2/ivy/functional/ivy/device.py#L371">ivy.num_cpu_cores</a>, which determines the number of cores available in the CPU,
-and <a class="reference external" href="https://github.com/unifyai/ivy/blob/0b89c7fa050db13ef52b0d2a3e1a5fb801a19fa2/ivy/functional/ivy/device.py#L424">ivy.default_device</a>, which returns the correct device to use.</p>
-<p><a class="reference external" href="https://github.com/unifyai/ivy/blob/0b89c7fa050db13ef52b0d2a3e1a5fb801a19fa2/ivy/functional/ivy/device.py#L424">ivy.default_device</a> is arguably the most important function.
+<a class="reference external" href="https://github.com/unifyai/ivy/blob/08ebc4d6d5e200dcbb8498b213538ffd550767f3/ivy/functional/ivy/device.py#L460">ivy.total_mem_on_dev</a>, which gets the total amount of memory for a given device,
+<a class="reference external" href="https://github.com/unifyai/ivy/blob/08ebc4d6d5e200dcbb8498b213538ffd550767f3/ivy/functional/ivy/device.py#L600">ivy.dev_util</a>, which gets the current utilization (%) for a given device,
+<a class="reference external" href="https://github.com/unifyai/ivy/blob/08ebc4d6d5e200dcbb8498b213538ffd550767f3/ivy/functional/ivy/device.py#L659">ivy.num_cpu_cores</a>, which determines the number of cores available in the CPU,
+and <a class="reference external" href="https://github.com/unifyai/ivy/blob/08ebc4d6d5e200dcbb8498b213538ffd550767f3/ivy/functional/ivy/device.py#L720">ivy.default_device</a>, which returns the correct device to use.</p>
+<p><a class="reference external" href="https://github.com/unifyai/ivy/blob/08ebc4d6d5e200dcbb8498b213538ffd550767f3/ivy/functional/ivy/device.py#L720">ivy.default_device</a> is arguably the most important function.
 Any function in the functional API that receives a <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument will make use of this function,
 as explained below.</p>
 </section>
@@ -204,10 +206,10 @@ the input arrays. In cases where the input arrays are located on different devic
 unless the function is specific to distributed training.</p>
 <p>The <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument is handled in <a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/func_wrapper.py#L286">infer_device</a> for all functions which have the <code class="code docutils literal notranslate"><span class="pre">&#64;infer_device</span></code>
 decorator, similar to how <code class="code docutils literal notranslate"><span class="pre">dtype</span></code> is handled.
-This function calls <a class="reference external" href="https://github.com/unifyai/ivy/blob/0b89c7fa050db13ef52b0d2a3e1a5fb801a19fa2/ivy/functional/ivy/device.py#L424">ivy.default_device</a> in order to determine the correct device.
-As discussed in the <a class="reference internal" href="3_function_wrapping.html#function-wrapping"><span class="std std-ref">Function Wrapping</span></a> section,
+This function calls <a class="reference external" href="https://github.com/unifyai/ivy/blob/08ebc4d6d5e200dcbb8498b213538ffd550767f3/ivy/functional/ivy/device.py#L720">ivy.default_device</a> in order to determine the correct device.
+As discussed in the <a class="reference internal" href="9_function_wrapping.html#function-wrapping"><span class="std std-ref">Function Wrapping</span></a> section,
 this is applied to all applicable functions dynamically during <a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/backend_handler.py#L204">backend setting</a>.</p>
-<p>Overall, <a class="reference external" href="https://github.com/unifyai/ivy/blob/0b89c7fa050db13ef52b0d2a3e1a5fb801a19fa2/ivy/functional/ivy/device.py#L424">ivy.default_device</a> infers the device as follows:</p>
+<p>Overall, <a class="reference external" href="https://github.com/unifyai/ivy/blob/08ebc4d6d5e200dcbb8498b213538ffd550767f3/ivy/functional/ivy/device.py#L720">ivy.default_device</a> infers the device as follows:</p>
 <ol class="arabic simple">
 <li><p>if the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument is provided, use this directly</p></li>
 <li><p>otherwise, if an array is present in the arguments (very rare if the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument is present), set <code class="code docutils literal notranslate"><span class="pre">arr</span></code> to this array. This will then be used to infer the device by calling <code class="code docutils literal notranslate"><span class="pre">ivy.dev</span></code> on the array</p></li>
@@ -222,12 +224,12 @@ the argument is listed as required in the backend-specific implementations at
 <p>This is exactly the same as with the <code class="code docutils literal notranslate"><span class="pre">dtype</span></code> argument, as explained in the <a class="reference internal" href="6_data_types.html#data-types"><span class="std std-ref">Data Types</span></a> section.</p>
 <p>Let’s take a look at the function <code class="code docutils literal notranslate"><span class="pre">ivy.zeros</span></code> as an example.</p>
 <p>The implementation in <code class="code docutils literal notranslate"><span class="pre">ivy/functional/ivy/creation.py</span></code> has the following signature:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@outputs_to_ivy_arrays</span>
-<span class="nd">@handle_out_argument</span>
-<span class="nd">@infer_dtype</span>
-<span class="nd">@infer_device</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">outputs_to_ivy_arrays</span>
+<span class="nd">handle_out_argument</span>
+<span class="nd">infer_dtype</span>
+<span class="nd">infer_device</span>
 <span class="k">def</span> <span class="nf">zeros</span><span class="p">(</span>
-    <span class="n">shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
+    <span class="n">shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">dtype</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDtype</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">device</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Device</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDevice</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -238,25 +240,16 @@ the argument is listed as required in the backend-specific implementations at
 all list <code class="code docutils literal notranslate"><span class="pre">device</span></code> as required.</p>
 <p>Jax:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zeros</span><span class="p">(</span>
-    <span class="n">shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
+    <span class="n">shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">dtype</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span>
     <span class="n">device</span><span class="p">:</span> <span class="n">jaxlib</span><span class="o">.</span><span class="n">xla_extension</span><span class="o">.</span><span class="n">Device</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JaxArray</span><span class="p">:</span>
 </pre></div>
 </div>
-<p>MXNet:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zeros</span><span class="p">(</span>
-    <span class="n">shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
-    <span class="o">*</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span>
-    <span class="n">device</span><span class="p">:</span> <span class="n">mx</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">Context</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">mx</span><span class="o">.</span><span class="n">nd</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-</pre></div>
-</div>
 <p>NumPy:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zeros</span><span class="p">(</span>
-    <span class="n">shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
+    <span class="n">shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">dtype</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span>
     <span class="n">device</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -265,7 +258,7 @@ all list <code class="code docutils literal notranslate"><span class="pre">devic
 </div>
 <p>TensorFlow:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zeros</span><span class="p">(</span>
-    <span class="n">shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
+    <span class="n">shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">dtype</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">DType</span><span class="p">,</span>
     <span class="n">device</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -274,7 +267,7 @@ all list <code class="code docutils literal notranslate"><span class="pre">devic
 </div>
 <p>PyTorch:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zeros</span><span class="p">(</span>
-    <span class="n">shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
+    <span class="n">shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">dtype</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span>
     <span class="n">device</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
@@ -292,7 +285,10 @@ by calling <code class="code docutils literal notranslate"><span class="pre">ivy
 <p>If you’re ever unsure of how best to proceed,
 please feel free to engage with the <a class="reference external" href="https://github.com/unifyai/ivy/discussions/1317">devices discussion</a>,
 or reach out on <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982738108166602752">devices channel</a>!</p>
-</section>
+<p><strong>Video</strong></p>
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/-Y1Ofk72TLY" class="video">
+</iframe></section>
 </section>
 
 

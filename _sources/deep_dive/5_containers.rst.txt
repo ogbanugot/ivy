@@ -234,9 +234,10 @@ and :code:`ivy.negative`, each of which are themselves *nestable*.
     def cross_entropy(
         true: Union[ivy.Array, ivy.NativeArray],
         pred: Union[ivy.Array, ivy.NativeArray],
-        axis: Optional[int] = -1,
-        epsilon: Optional[float] = 1e-7,
+        /,
         *,
+        axis: Optional[int] = -1,
+        epsilon: float =1e-7,
         out: Optional[ivy.Array] = None
     ) -> ivy.Array:
         pred = ivy.clip(pred, epsilon, 1 - epsilon)
@@ -293,7 +294,7 @@ are shared but not identical.
 
 .. code-block:: python
 
-    x = ivy.Container(a={'b': 2, 'c': 4}, d={'e': 6, 'f': 8})
+    x = ivy.Container(a={'b': 2, 'c': 4}, d={'e': 6, 'f': 9})
     y = ivy.Container(a=2, d=3)
 
 The shared key chains (chains of keys, used for indexing the container)
@@ -313,12 +314,12 @@ It's helpful to look at an example:
     print(x / y)
     {
         a: {
-          b: 1,
-          c: 2
+          b: 1.0,
+          c: 2.0
         },
         d: {
-          e: 3,
-          f: 2.67
+          e: 2.0,
+          f: 3.0
         }
     }
 
@@ -374,3 +375,12 @@ This should have hopefully given you a good feel for containers, and how these a
 If you're ever unsure of how best to proceed,
 please feel free to engage with the `containers discussion`_,
 or reach out on `discord`_ in the `containers channel`_!
+
+
+**Video**
+
+.. raw:: html
+
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/oHcoYFi2rvI" class="video">
+    </iframe>
