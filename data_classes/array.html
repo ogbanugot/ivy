@@ -298,7 +298,7 @@ a data type determined by <span class="xref std std-ref">type-promotion</span>.<
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances only:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances only:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span>
@@ -353,7 +353,7 @@ data type determined by <span class="xref std std-ref">type-promotion</span>.</p
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances only:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances only:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
@@ -508,6 +508,14 @@ the name function_name and the new args variable or kwargs as the new inputs.</p
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ivy.array.array.Array.conv">
+<span class="sig-name descname"><span class="pre">conv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ivy.array.array.Array.conv" title="Permalink to this definition"></a></dt>
+<dd><p>Add the data of the current array from which the instance function is invoked
+as the first arg parameter or kwarg parameter. Return the new function with
+the name function_name and the new args variable or kwargs as the new inputs.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ivy.array.array.Array.conv2d_transpose">
 <span class="sig-name descname"><span class="pre">conv2d_transpose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ivy.array.array.Array.conv2d_transpose" title="Permalink to this definition"></a></dt>
 <dd><p>Add the data of the current array from which the instance function is invoked
@@ -518,6 +526,14 @@ the name function_name and the new args variable or kwargs as the new inputs.</p
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.array.array.Array.conv_general_dilated">
 <span class="sig-name descname"><span class="pre">conv_general_dilated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ivy.array.array.Array.conv_general_dilated" title="Permalink to this definition"></a></dt>
+<dd><p>Add the data of the current array from which the instance function is invoked
+as the first arg parameter or kwarg parameter. Return the new function with
+the name function_name and the new args variable or kwargs as the new inputs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ivy.array.array.Array.conv_general_transpose">
+<span class="sig-name descname"><span class="pre">conv_general_transpose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ivy.array.array.Array.conv_general_transpose" title="Permalink to this definition"></a></dt>
 <dd><p>Add the data of the current array from which the instance function is invoked
 as the first arg parameter or kwarg parameter. Return the new function with
 the name function_name and the new args variable or kwargs as the new inputs.</p>
