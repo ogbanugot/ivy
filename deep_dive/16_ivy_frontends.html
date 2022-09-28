@@ -181,27 +181,27 @@ frontend functions.</p>
 explanation of how to place a frontend function can be found in a sub-section of the Frontend APIs <a href="#id4"><span class="problematic" id="id5">`open_task`_</span></a>.</p>
 <p><strong>Jax</strong></p>
 <p>JAX has two distinct groups of functions, those in the <code class="code docutils literal notranslate"><span class="pre">jax.lax</span></code> namespace and
-those in the <code class="xref py py-mod docutils literal notranslate"><span class="pre">jax.numpy</span></code> namespace. The former set of functions map very closely
+those in the <code class="code docutils literal notranslate"><span class="pre">jax.numpy</span></code> namespace. The former set of functions map very closely
 to the API for the Accelerated Linear Algebra (<a class="reference external" href="https://www.tensorflow.org/xla">XLA</a>)
 compiler, which is used under the hood to run high performance JAX code. The latter set
 of functions map very closely to NumPy’s well known API. In general, all functions in
-the <code class="xref py py-mod docutils literal notranslate"><span class="pre">jax.numpy</span></code> namespace are themselves implemented as a composition of the
+the <code class="code docutils literal notranslate"><span class="pre">jax.numpy</span></code> namespace are themselves implemented as a composition of the
 lower-level functions in the <code class="code docutils literal notranslate"><span class="pre">jax.lax</span></code> namespace.</p>
 <p>When transpiling between frameworks, the first step is to compile the computation graph
 into low level python functions for the source framework using Ivy’s graph
 compiler, before then replacing these nodes with the associated functions in Ivy’s
 frontend API. Given that all jax code can be decomposed into <code class="code docutils literal notranslate"><span class="pre">jax.lax</span></code>
-function calls, when transpiling JAX code it should always be possible to
+function calls, when transpiling <code class="code docutils literal notranslate"><span class="pre">jax</span></code> code it should always be possible to
 express the computation graph as a composition of only <code class="code docutils literal notranslate"><span class="pre">jax.lax</span></code> functions.
 Therefore, arguably these are the <em>only</em> functions we should need to implement in the
 JAX frontend. However, in general we wish to be able to compile a graph in the backend
 framework with varying levels of dynamicism. A graph of only <code class="code docutils literal notranslate"><span class="pre">jax.lax</span></code> functions
 chained together in general is more <em>static</em> and less <em>dynamic</em> than a graph which
-chains <code class="xref py py-mod docutils literal notranslate"><span class="pre">jax.numpy</span></code> functions together. We wish to enable varying extents of
+chains <code class="code docutils literal notranslate"><span class="pre">jax.numpy</span></code> functions together. We wish to enable varying extents of
 dynamicism when compiling a graph with our graph compiler, and therefore we also
-implement the functions in the <code class="xref py py-mod docutils literal notranslate"><span class="pre">jax.numpy</span></code> namespace in our frontend API for JAX.</p>
-<p>Thus, both <code class="xref py py-mod docutils literal notranslate"><span class="pre">lax</span></code> and <code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy</span></code> modules are created in the JAX frontend API.
-We start with the function <code class="xref py py-func docutils literal notranslate"><span class="pre">lax.add()</span></code> as an example.</p>
+implement the functions in the <code class="code docutils literal notranslate"><span class="pre">jax.numpy</span></code> namespace in our frontend API for JAX.</p>
+<p>Thus, both <code class="code docutils literal notranslate"><span class="pre">lax</span></code> and <code class="code docutils literal notranslate"><span class="pre">numpy</span></code> modules are created in the JAX frontend API.
+We start with the function <code class="code docutils literal notranslate"><span class="pre">lax.add</span></code> as an example.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># in ivy/functional/frontends/jax/lax/operators.py</span>
 <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -226,7 +226,7 @@ according to the framework set in the backend.</p>
 <code class="code docutils literal notranslate"><span class="pre">operators</span></code>, again in the <a class="reference external" href="https://jax.readthedocs.io/en/latest/jax.lax.html">jax.lax</a> directory.
 By referring to the <a class="reference external" href="https://jax.readthedocs.io/en/latest/_autosummary/jax.lax.tan.html">jax.lax.tan</a> documentation, we can see that it has only one
 argument. In the same manner as our <code class="code docutils literal notranslate"><span class="pre">add</span></code> function, we simply link its return
-to <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.tan()</span></code>, and again the computation then depends on the backend framework.</p>
+to <code class="code docutils literal notranslate"><span class="pre">ivy.tan</span></code>, and again the computation then depends on the backend framework.</p>
 <p><strong>NumPy</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># in ivy/functional/frontends/numpy/mathematical_functions/arithmetic_operations.py</span>
 <span class="k">def</span> <span class="nf">add</span><span class="p">(</span>
@@ -326,7 +326,7 @@ argument.</p>
 </div>
 <p>Likewise, <code class="code docutils literal notranslate"><span class="pre">tan</span></code> is also placed under <code class="code docutils literal notranslate"><span class="pre">math</span></code>.
 By referring to the <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/math/tan">tf.tan</a> documentation, we add the same arguments,
-and simply wrap <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.tan()</span></code> in this case.
+and simply wrap <code class="code docutils literal notranslate"><span class="pre">ivy.tan</span></code> in this case.
 Again, we do not support the <code class="code docutils literal notranslate"><span class="pre">name</span></code> argument for the reasons outlined above.</p>
 <p><strong>PyTorch</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># in ivy/functional/frontends/torch/pointwise_ops.py</span>
@@ -350,7 +350,7 @@ into <code class="code docutils literal notranslate"><span class="pre">ivy.add</
 </div>
 <p><code class="code docutils literal notranslate"><span class="pre">tan</span></code> is also placed under <code class="code docutils literal notranslate"><span class="pre">pointwise_ops</span></code> as is the case in the <a class="reference external" href="https://pytorch.org/docs/stable/torch.html#math-operations">torch</a>
 framework. Looking at the <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.tan.html#torch.tan">torch.tan</a> documentation, we can mimic the same arguments,
-and again simply wrap <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.tan()</span></code>,
+and again simply wrap <code class="code docutils literal notranslate"><span class="pre">ivy.tan</span></code>,
 also making use of the <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument in this case.</p>
 </section>
 <section id="unused-arguments">
@@ -576,7 +576,7 @@ dict to the Ivy frontend function and the key from the
 in <code class="code docutils literal notranslate"><span class="pre">test_frontend_function</span></code>.</p>
 <p>The way we do this is to wrap all framework-specific classes inside a
 <code class="code docutils literal notranslate"><span class="pre">NativeClass</span></code> during frontend testing. The <code class="code docutils literal notranslate"><span class="pre">NativeClass</span></code> is defined in
-<code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/ivy_tests/test_ivy/test_frontends/__init__.py</span></code>, and this acts as a
+<code class="code docutils literal notranslate"><span class="pre">ivy/ivy_tests/test_ivy/test_frontends/__init__.py</span></code>, and this acts as a
 placeholder class to represent the framework-specific class and its counterpart.
 It has only one attribute, <code class="code docutils literal notranslate"><span class="pre">_native_class</span></code>, which holds the reference to the
 special class being used by the targeted framework.
