@@ -497,7 +497,7 @@ otherwise, <code class="docutils literal notranslate"><span class="pre">False</s
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">can_cast</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">uint8</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
 <span class="go">True</span>
 </pre></div>
@@ -566,7 +566,7 @@ otherwise, <code class="docutils literal notranslate"><span class="pre">False</s
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xType</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">float16</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">yType</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">closest_valid_dtype</span><span class="p">(</span><span class="n">xType</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">yType</span><span class="p">)</span>
@@ -749,12 +749,6 @@ given, returns uint dtype according to input, else uint32 by default.</p>
 </dl>
 <p class="rubric">Examples</p>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> inputs:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x1</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">int32</span>
-</pre></div>
-</div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x1</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
@@ -768,41 +762,12 @@ given, returns uint dtype according to input, else uint32 by default.</p>
 <span class="go">int32</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x1</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">float32</span>
-</pre></div>
-</div>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> inputs:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span>                     <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">int32</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]),</span>                             <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]),</span>
+<span class="gp">... </span>                  <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="go">float32</span>
-</pre></div>
-</div>
-<p class="rubric">Instance Method Examples</p>
-<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> inputs:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">dtype</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">int32</span>
-</pre></div>
-</div>
-<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> inputs:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span>                      <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">{</span>
-<span class="go">    a: int32,</span>
-<span class="go">    b: int32</span>
-<span class="go">}</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -823,7 +788,7 @@ given, returns uint dtype according to input, else uint32 by default.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> inputs:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> inputs:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype_bits</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">32</span>
@@ -839,7 +804,7 @@ given, returns uint dtype according to input, else uint32 by default.</p>
 <span class="go">16</span>
 </pre></div>
 </div>
-<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> inputs:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> inputs:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype_bits</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_int8</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">8</span>
@@ -894,7 +859,7 @@ number larger than 1.0 according to the IEEE-754 standard.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="go">finfo(resolution=1e-06, min=-3.4028235e+38, max=3.4028235e+38, dtype=float32)</span>
 </pre></div>
@@ -1033,7 +998,7 @@ number larger than 1.0 according to the IEEE-754 standard.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
 <span class="go">iinfo(min=-2147483648, max=2147483647, dtype=int32)</span>
 </pre></div>
@@ -1166,12 +1131,11 @@ the current framework.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>with <code class="code docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> inputs:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
 <span class="go">False</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="s1">&#39;uint64&#39;</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="s2">&quot;uint64&quot;</span><span class="p">))</span>
 <span class="go">False</span>
 </pre></div>
 </div>
@@ -1179,49 +1143,8 @@ the current framework.</p>
 <span class="go">False</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">))</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-<p>with <code class="code docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> inputs:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_uint8</span><span class="p">))</span>
 <span class="go">False</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_float32</span><span class="p">))</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="s1">&#39;native_bool&#39;</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="s1">&#39;native_float64&#39;</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_int16</span><span class="p">))</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="s1">&#39;native_int32&#39;</span><span class="p">))</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_float16</span><span class="p">))</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_int64</span><span class="p">))</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_int8</span><span class="p">))</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">invalid_dtype</span><span class="p">(</span><span class="s1">&#39;native_uint64&#39;</span><span class="p">))</span>
-<span class="go">True</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1265,7 +1188,7 @@ the current framework.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_float_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">True</span>
@@ -1320,7 +1243,7 @@ the current framework.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_int_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">True</span>
@@ -1468,16 +1391,12 @@ will be implementation-specific.</p>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code></p>
 </dd>
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><ul class="simple">
-<li><p><em>ret</em> – the dtype resulting from an operation involving the input arrays and dtypes.</p></li>
-<li><p>This function conforms to the <a href="#id9"><span class="problematic" id="id10">`</span></a>Array API Standard</p></li>
-<li><p><strong>&lt;https</strong> (//data-apis.org/array-api/latest/&gt;`_. This docstring is an extension of the)</p></li>
-<li><p><strong>`docstring &lt;https</strong> (//data-apis.org/array-api/latest/API_specification/generated/signatures.data_type_functions.result_type.html&gt;`_ )</p></li>
-<li><p><em>in the standard.</em></p></li>
-</ul>
-</p>
+<dd class="field-odd"><p><em>ret</em> – the dtype resulting from an operation involving the input arrays and dtypes.</p>
 </dd>
 </dl>
+<p>This function conforms to the <a class="reference external" href="https://data-apis.org/array-api/latest/">Array API Standard</a>. This docstring is an extension of the
+<a class="reference external" href="https://data-apis.org/array-api/latest/API_specification/generated/signatures.data_type_functions.result_type.html">docstring</a> 
+in the standard.</p>
 <p class="rubric">Examples</p>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
@@ -1493,7 +1412,7 @@ will be implementation-specific.</p>
 <span class="go">float64</span>
 </pre></div>
 </div>
-<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">result_type</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">uint8</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">uint64</span><span class="p">))</span>
 <span class="go">uint64</span>
 </pre></div>
@@ -1522,7 +1441,7 @@ will be implementation-specific.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_dtype</span><span class="p">(</span><span class="s2">&quot;float64&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
 <span class="go">    [&#39;float64&#39;]</span>
@@ -1547,7 +1466,7 @@ will be implementation-specific.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_default_dtype</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> input:</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_default_dtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">native_int32</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype_stack</span>
 <span class="go">    [&#39;int32&#39;]</span>
@@ -1715,7 +1634,7 @@ current framework.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>with <code class="code docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> inputs:</p>
+<p>with <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Dtype</span></code> inputs:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
 <span class="go">True</span>
 </pre></div>
@@ -1748,7 +1667,7 @@ current framework.</p>
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>with <code class="code docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> inputs:</p>
+<p>with <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeDtype</span></code> inputs:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtype</span><span class="p">(</span><span class="s1">&#39;native_bool&#39;</span><span class="p">))</span>
 <span class="go">False</span>
 </pre></div>
