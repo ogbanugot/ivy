@@ -73,6 +73,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#temporary-compositions">Temporary Compositions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#supported-data-types-and-devices">Supported Data Types and Devices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#classes-and-instance-methods">Classes and Instance Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#frontend-data-type-promotion-rules">Frontend Data Type Promotion Rules</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="17_ivy_frontends_tests.html">Ivy Frontend Tests 🧪</a></li>
@@ -536,6 +537,27 @@ As explained in <a class="reference internal" href="../design/ivy_as_a_transpile
 computation graph in the source framework. In the case of instance methods, we then
 replace each of the original instance methods in the extracted computation graph with
 these new instance methods defined in the Ivy frontend class.</p>
+</section>
+<section id="frontend-data-type-promotion-rules">
+<h2>Frontend Data Type Promotion Rules<a class="headerlink" href="#frontend-data-type-promotion-rules" title="Permalink to this heading"></a></h2>
+<p>Each frontend framework has its own rules governing the common result type for two array
+operands during an arithmetic operation.</p>
+<p>In order to ensure that each frontend framework implemented in Ivy has the same data type
+promotion behaviors as the native framework does, we have implemented data type promotion
+rules according to framework-specific data type promotion tables for these we are currently
+supporting as frontends. The function can be accessed through calling
+<code class="xref py py-func docutils literal notranslate"><span class="pre">promote_types_of_&lt;frontend&gt;_inputs()</span></code> and pass in both array operands.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ivy/functional/frontends/tensorflow/math.py</span>
+<span class="kn">from</span> <span class="nn">ivy.functional.frontends.tensorflow</span> <span class="kn">import</span> <span class="n">promote_types_of_tensorflow_inputs</span>
+<span class="o">...</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">promote_types_of_tensorflow_inputs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Although under most cases, array operands being passed into an arithmetic operation function
+should be the same data type, using the data type promotion rules can add a layer of sanity
+check to prevent data precision losses or exceptions from further arithmetic operations.</p>
 <p><strong>Round Up</strong></p>
 <p>This should hopefully have given you a better grasp on the what the Ivy Frontend APIs
 are for, how they should be implemented, and the things to watch out for!
