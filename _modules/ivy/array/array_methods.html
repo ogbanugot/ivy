@@ -2284,7 +2284,7 @@
 <span class="sd">    ivy.array([nan, nan, -inf, 0., 1.61, inf])</span>
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[float(&#39;nan&#39;), 1, 5.0, float(&#39;+inf&#39;)],</span>
-<span class="sd">    ...                   [+0, -1.0, -5, float(&#39;-inf&#39;)]])</span>
+<span class="sd">    ...                [+0, -1.0, -5, float(&#39;-inf&#39;)]])</span>
 <span class="sd">    &gt;&gt;&gt; y = x.log()</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    ivy.array([[nan, 0., 1.61, inf],</span>
@@ -2390,7 +2390,7 @@
 <span class="sd">    ivy.array([nan, nan, -inf, 0., 0.699, inf])</span>
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[float(&#39;nan&#39;), 1, 5.0, float(&#39;+inf&#39;)],</span>
-<span class="sd">    ...                   [+0, -1.0, -5, float(&#39;-inf&#39;)]])</span>
+<span class="sd">    ...                [+0, -1.0, -5, float(&#39;-inf&#39;)]])</span>
 <span class="sd">    &gt;&gt;&gt; y = x.log10()</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    ivy.array([[nan, 0., 0.699, inf],</span>
@@ -3978,10 +3978,10 @@
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; x = ivy.array([[[5,4],</span>
-<span class="sd">    ...               [11, 2]],</span>
-<span class="sd">    ...              [[3, 5],</span>
-<span class="sd">    ...               [9, 7]]])</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([[[5, 4],</span>
+<span class="sd">    ...                 [11, 2]],</span>
+<span class="sd">    ...                [[3, 5],</span>
+<span class="sd">    ...                 [9, 7]]])</span>
 
 <span class="sd">    &gt;&gt;&gt; y = x.einops_reduce(&#39;a b c -&gt; b c&#39;, &#39;max&#39;)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
@@ -3989,9 +3989,9 @@
 <span class="sd">               [11,  7]])</span>
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[[5, 4, 3],</span>
-<span class="sd">    ...                [11, 2, 9]],</span>
-<span class="sd">    ...               [[3, 5, 7],</span>
-<span class="sd">    ...                [9, 7, 1]]])</span>
+<span class="sd">    ...                 [11, 2, 9]],</span>
+<span class="sd">    ...                [[3, 5, 7],</span>
+<span class="sd">    ...                 [9, 7, 1]]])</span>
 <span class="sd">    &gt;&gt;&gt; y = x.einops_reduce(&#39;a b c -&gt; a () c&#39;, &#39;min&#39;)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    ivy.array([[[5, 2, 3]],</span>
@@ -4038,7 +4038,7 @@
 <span class="sd">    ivy.array([[5,5,5],[4,4,4]])</span>
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[5,4],</span>
-<span class="sd">    ...            [2, 3]])</span>
+<span class="sd">    ...                [2, 3]])</span>
 <span class="sd">    &gt;&gt;&gt; y = x.einops_repeat(&#39;a b -&gt;  a b c&#39;, c=3)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    ivy.array([[5,5,5],[4,4,4]])</span>
@@ -4998,17 +4998,17 @@
 <span class="sd">    With :class:`ivy.Array` inputs:</span>
 
 <span class="sd">    &gt;&gt;&gt; w = ivy.array([[1., 2, 3],</span>
-<span class="sd">    ...               [4, 6, 1],</span>
-<span class="sd">    ...               [1, 0, 7]])</span>
+<span class="sd">    ...                [4, 6, 1],</span>
+<span class="sd">    ...                [1, 0, 7]])</span>
 <span class="sd">    &gt;&gt;&gt; dcdw = ivy.array([[0.5, 0.2, 0.1],</span>
-<span class="sd">    ...                    [0.3, 0.6, 0.4],</span>
-<span class="sd">    ...                    [0.4, 0.7, 0.2]])</span>
+<span class="sd">    ...                   [0.3, 0.6, 0.4],</span>
+<span class="sd">    ...                   [0.4, 0.7, 0.2]])</span>
 <span class="sd">    &gt;&gt;&gt; lr = ivy.array(0.1)</span>
 <span class="sd">    &gt;&gt;&gt; new_weights = w.gradient_descent_update(dcdw, lr, stop_gradients = True)</span>
 <span class="sd">    &gt;&gt;&gt; print(new_weights)</span>
 <span class="sd">    ivy.array([[ 0.95,  1.98,  2.99],</span>
-<span class="sd">    ...           [ 3.97,  5.94,  0.96],</span>
-<span class="sd">    ...           [ 0.96, -0.07,  6.98]])</span>
+<span class="sd">    ...        [ 3.97,  5.94,  0.96],</span>
+<span class="sd">    ...        [ 0.96, -0.07,  6.98]])</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
@@ -5307,9 +5307,9 @@
 <span class="sd">    &gt;&gt;&gt; result = x.conv1d(filters, (1,), &#39;VALID&#39;)</span>
 <span class="sd">    &gt;&gt;&gt; print(result)</span>
 <span class="sd">    ivy.array([[[ 2.,  3.],</span>
-<span class="sd">    ...            [ 4.,  7.],</span>
-<span class="sd">    ...            [ 7., 13.],</span>
-<span class="sd">    ...            [11., 20.]]])</span>
+<span class="sd">    ...         [ 4.,  7.],</span>
+<span class="sd">    ...         [ 7., 13.],</span>
+<span class="sd">    ...         [11., 20.]]])</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
@@ -5423,11 +5423,11 @@
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[[[1.], [2.0],[3.]],</span>
-<span class="sd">    ...                    [[1.], [2.0],[3.]],</span>
-<span class="sd">    ...                    [[1.], [2.0],[3.]]]]) #NHWC</span>
-<span class="sd">    &gt;&gt;&gt; filters = ivy.array([[[[0.]],[[1.]],[[0.]]],</span>
-<span class="sd">    ...                        [[[0.]],[[1.]], [[0.]]],</span>
-<span class="sd">    ...                        [[[0.]],[[1.]], [[0.]]]]) #HWIO</span>
+<span class="sd">    ...                 [[1.], [2.0],[3.]],</span>
+<span class="sd">    ...                 [[1.], [2.0],[3.]]]]) #NHWC</span>
+<span class="sd">    &gt;&gt;&gt; filters = ivy.array([[[[0.]], [[1.]], [[0.]]],</span>
+<span class="sd">    ...                      [[[0.]], [[1.]], [[0.]]],</span>
+<span class="sd">    ...                      [[[0.]], [[1.]], [[0.]]]]) #HWIO</span>
 <span class="sd">    &gt;&gt;&gt; result = x.conv2d(filters, 1, &#39;SAME&#39;, data_format=&#39;NHWC&#39;,</span>
 <span class="sd">    ...    dilations= 1)</span>
 <span class="sd">    &gt;&gt;&gt; print(result)</span>
@@ -5569,10 +5569,10 @@
 <span class="sd">    &gt;&gt;&gt; y = x.cholesky(upper=&#39;false&#39;)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    ivy.array([[ 2.  ,  0.5 ,  1.  ,  0.25,  1.  ],</span>
-<span class="sd">    ...           [ 0.  ,  0.5 , -1.  , -0.25, -1.  ],</span>
-<span class="sd">    ...           [ 0.  ,  0.  ,  1.  , -0.5 , -2.  ],</span>
-<span class="sd">    ...           [ 0.  ,  0.  ,  0.  ,  0.5 , -3.  ],</span>
-<span class="sd">    ...           [ 0.  ,  0.  ,  0.  ,  0.  ,  1.  ]])</span>
+<span class="sd">    ...        [ 0.  ,  0.5 , -1.  , -0.25, -1.  ],</span>
+<span class="sd">    ...        [ 0.  ,  0.  ,  1.  , -0.5 , -2.  ],</span>
+<span class="sd">    ...        [ 0.  ,  0.  ,  0.  ,  0.5 , -3.  ],</span>
+<span class="sd">    ...        [ 0.  ,  0.  ,  0.  ,  0.  ,  1.  ]])</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
@@ -5787,14 +5787,14 @@
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    x = ivy.array([[1., 2.],</span>
-<span class="sd">    ...          [3., 4.]])</span>
+<span class="sd">    ...            [3., 4.]])</span>
 <span class="sd">    y = pinv(x, None, None)</span>
 <span class="sd">    print(y)</span>
 <span class="sd">    ivy.array([[-2., 1.],</span>
-<span class="sd">    ...       [1.5, -0.5]])</span>
+<span class="sd">    ...        [1.5, -0.5]])</span>
 
 <span class="sd">    x = ivy.array([[1., 2.],</span>
-<span class="sd">    ...              [3., 4.]])</span>
+<span class="sd">    ...            [3., 4.]])</span>
 <span class="sd">    out = ivy.array()</span>
 <span class="sd">    pinv(x, 0, out)</span>
 <span class="sd">    print(out)</span>
@@ -5840,7 +5840,7 @@
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[1.0, 2.0],</span>
-<span class="sd">    ...                   [3.0, 4.0]])</span>
+<span class="sd">    ...                [3.0, 4.0]])</span>
 <span class="sd">    &gt;&gt;&gt; y = x.slogdet()</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    slogdet(sign=ivy.array(-1.), logabsdet=ivy.array(0.6931472))</span>
@@ -6751,11 +6751,11 @@
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; x = ivy.array([[0.0976, -0.3452,  1.2740], </span>
-<span class="sd">    ...                   [0.1047,  0.5886,  1.2732], </span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([[0.0976, -0.3452,  1.2740],</span>
+<span class="sd">    ...                   [0.1047,  0.5886,  1.2732],</span>
 <span class="sd">    ...                   [0.7696, -1.7024, -2.2518]])</span>
-<span class="sd">    &gt;&gt;&gt; norm = x.layer_norm([0, 1], epsilon=0.001, </span>
-<span class="sd">    ...                          new_std=1.5, weight=0.5, bias=[0.5, 0.02, 0.1])</span>
+<span class="sd">    &gt;&gt;&gt; norm = x.layer_norm([0, 1], epsilon=0.001,</span>
+<span class="sd">    ...                     new_std=1.5, weight=0.5, bias=[0.5, 0.02, 0.1])</span>
 <span class="sd">    &gt;&gt;&gt; print(norm)</span>
 <span class="sd">    ivy.array([[ 0.826, -0.178, 0.981 ],</span>
 <span class="sd">               [ 0.831,  0.421, 0.981 ],</span>
@@ -7700,22 +7700,22 @@
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[0.0, 1.0, 2.0],</span>
-<span class="sd">    ...                   [3.0, 4.0, 5.0],</span>
-<span class="sd">    ...                   [6.0, 7.0, 8.0]])</span>
+<span class="sd">    ...                [3.0, 4.0, 5.0],</span>
+<span class="sd">    ...                [6.0, 7.0, 8.0]])</span>
 <span class="sd">    &gt;&gt;&gt; y = x.var()</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    ivy.array(6.6666665)</span>
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[0.0, 1.0, 2.0],</span>
-<span class="sd">    ...                   [3.0, 4.0, 5.0],</span>
-<span class="sd">    ...                   [6.0, 7.0, .08]])</span>
+<span class="sd">    ...                [3.0, 4.0, 5.0],</span>
+<span class="sd">    ...                [6.0, 7.0, .08]])</span>
 <span class="sd">    &gt;&gt;&gt; y = x.var(axis=0)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    ivy.array([6., 6., 4.1])</span>
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[0.0, 1.0, 2.0],</span>
-<span class="sd">    ...                   [3.0, 4.0, 5.0],</span>
-<span class="sd">    ...                   [6.0, 7.0, .08]])</span>
+<span class="sd">    ...                [3.0, 4.0, 5.0],</span>
+<span class="sd">    ...                [6.0, 7.0, .08]])</span>
 <span class="sd">    &gt;&gt;&gt; y = ivy.array([0., 0., 0.])</span>
 <span class="sd">    &gt;&gt;&gt; x.var(axis=1, out=y)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
@@ -7818,8 +7818,8 @@
 <span class="sd">               [0, 8]])</span>
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[1, 5, 2],</span>
-<span class="sd">    ...                   [4, 3, 0],</span>
-<span class="sd">    ...                   [4, 8, 2]])</span>
+<span class="sd">    ...                [4, 3, 0],</span>
+<span class="sd">    ...                [4, 8, 2]])</span>
 <span class="sd">    &gt;&gt;&gt; y = x.cumsum(axis=1, exclusive=True, reverse=True)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    ivy.array([[ 7,  2,  0],</span>
@@ -8100,7 +8100,7 @@
 
 <span class="sd">    &gt;&gt;&gt; from ivy.functional.ivy import activations</span>
 <span class="sd">    &gt;&gt;&gt; class ArrayExample:</span>
-<span class="sd">    ...        pass</span>
+<span class="sd">    ...     pass</span>
 <span class="sd">    &gt;&gt;&gt; ivy.add_ivy_array_instance_methods(ArrayExample, [activations])</span>
 <span class="sd">    &gt;&gt;&gt; print(hasattr(ArrayExample, &quot;relu&quot;), hasattr(ArrayExample, &quot;softmax&quot;))</span>
 <span class="sd">    True True</span>
