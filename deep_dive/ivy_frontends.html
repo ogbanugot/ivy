@@ -639,10 +639,7 @@ If the function is an alias, you should check if the implementation designated w
 <ul class="simple">
 <li><p>If an implementation exist then simply import the implemented function in the location (namespace) where the duplicate is listed.</p></li>
 </ul>
-<p>For example in the case of <code class="xref py py-func docutils literal notranslate"><span class="pre">np.asarray()</span></code>, the function is implemented <a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/frontends/numpy/creation_routines/from_existing_data.py#L5">here</a> and we use it as an alias by importing <a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/frontends/numpy/manipulation_routines/changing_kind_of_array.py">here</a>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ivy.functional.frontends.numpy.creation_routines</span> <span class="kn">import</span> <span class="n">asarray</span>
-</pre></div>
-</div>
+<p>For example in the case of <code class="xref py py-func docutils literal notranslate"><span class="pre">np.asarray()</span></code>, the function is implemented <a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/frontends/numpy/creation_routines/from_existing_data.py#L5">here</a> and we use it as an alias by importing <a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/frontends/numpy/manipulation_routines/changing_kind_of_array.py">here</a>.</p>
 <ul class="simple">
 <li><p>If the function has not been implemented, then feel free to contribute the implementation with its unit test.</p></li>
 <li><p>If two PRs contribute the implementation for a duplicate function (and no implementation for that function exists), then reviewers should select the most advanced (comprehensive) implementation to serve as the implementation while the second PR should be refactored as an alias by importing the implementation as explained earlier. Both contributors should be rewarded equally if need be.</p></li>
