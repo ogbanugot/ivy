@@ -50,7 +50,6 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../functional/experimental.html">Experimental</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/compilation.html">Compilation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/constants.html">Constants</a></li>
@@ -58,6 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/device.html">Device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/elementwise.html">Elementwise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/experimental.html">Experimental</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/general.html">General</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/gradients.html">Gradients</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/layers.html">Layers</a></li>
@@ -320,6 +320,20 @@
 <span class="sd">        -------</span>
 <span class="sd">        ret</span>
 <span class="sd">            Indices for where the boolean array is True.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        Using :class:`ivy.Array` instance method:</span>
+
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([[1, 2], [3, 4]])</span>
+<span class="sd">        &gt;&gt;&gt; res = x.argwhere()</span>
+<span class="sd">        &gt;&gt;&gt; print(res)</span>
+<span class="sd">        ivy.array([[0, 0], [0, 1], [1, 0], [1, 1]])</span>
+
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([[0, 2], [3, 4]])</span>
+<span class="sd">        &gt;&gt;&gt; res = x.argwhere()</span>
+<span class="sd">        &gt;&gt;&gt; print(res)</span>
+<span class="sd">        ivy.array([[0, 1], [1, 0], [1, 1]])</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div></div>
