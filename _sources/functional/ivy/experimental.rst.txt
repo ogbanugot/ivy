@@ -46,6 +46,7 @@ Experimental
    experimental/dirichlet.rst
    experimental/beta.rst
    experimental/gamma.rst
+   experimental/isin.rst
    experimental/max_pool1d.rst
    experimental/max_pool2d.rst
    experimental/max_pool3d.rst
