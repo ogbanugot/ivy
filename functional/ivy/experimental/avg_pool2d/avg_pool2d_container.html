@@ -113,6 +113,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../median.html">median</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nanmean.html">nanmean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../unravel_index.html">unravel_index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quantile.html">quantile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../diagflat.html">diagflat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../kron.html">kron</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sinc.html">sinc</a></li>
@@ -246,8 +247,8 @@ that the inputs broadcast to.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="n">b</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">avg_pool2d</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;SAME&quot;</span><span class="p">))</span>
 <span class="go">{</span>
-<span class="go">    a: ivy.array([], shape=(2, 0, 2, 2)),</span>
-<span class="go">    b: (&lt;class ivy.array.array.Array&gt; shape=[2, 3, 2, 2])</span>
+<span class="go">    a: (&lt;class ivy.array.array.Array&gt; shape=[2, 1, 3, 2]),</span>
+<span class="go">    b: (&lt;class ivy.array.array.Array&gt; shape=[2, 4, 3, 2])</span>
 <span class="go">}</span>
 </pre></div>
 </div>
