@@ -59,12 +59,14 @@ Experimental
    experimental/atleast_3d.rst
    experimental/take_along_axis.rst
    experimental/hsplit.rst
+   experimental/is_native_dtype.rst
    experimental/median.rst
    experimental/nanmean.rst
    experimental/unravel_index.rst
    experimental/quantile.rst
    experimental/diagflat.rst
    experimental/kron.rst
+   experimental/eig.rst
    experimental/sinc.rst
    experimental/lcm.rst
    experimental/fmod.rst
