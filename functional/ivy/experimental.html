@@ -70,14 +70,6 @@
 <li class="toctree-l2"><a class="reference internal" href="experimental/dct.html">dct</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/fft.html">fft</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/dropout1d.html">dropout1d</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/isin.html">isin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/msort.html">msort</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/triu_indices.html">triu_indices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/vorbis_window.html">vorbis_window</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/hann_window.html">hann_window</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/kaiser_window.html">kaiser_window</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/kaiser_bessel_derived_window.html">kaiser_bessel_derived_window</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/hamming_window.html">hamming_window</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/is_ivy_sparse_array.html">is_ivy_sparse_array</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/is_native_sparse_array.html">is_native_sparse_array</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/native_sparse_array.html">native_sparse_array</a></li>
@@ -85,7 +77,20 @@
 <li class="toctree-l2"><a class="reference internal" href="experimental/dirichlet.html">dirichlet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/beta.html">beta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/gamma.html">gamma</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/binary_cross_entropy_with_logits.html">binary_cross_entropy_with_logits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/median.html">median</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/nanmean.html">nanmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/unravel_index.html">unravel_index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/quantile.html">quantile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/diagflat.html">diagflat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/kron.html">kron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/eig.html">eig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/triu_indices.html">triu_indices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/vorbis_window.html">vorbis_window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/hann_window.html">hann_window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/kaiser_window.html">kaiser_window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/kaiser_bessel_derived_window.html">kaiser_bessel_derived_window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/hamming_window.html">hamming_window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/is_native_dtype.html">is_native_dtype</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/flatten.html">flatten</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/moveaxis.html">moveaxis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/ndenumerate.html">ndenumerate</a></li>
@@ -107,14 +112,9 @@
 <li class="toctree-l2"><a class="reference internal" href="experimental/atleast_3d.html">atleast_3d</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/take_along_axis.html">take_along_axis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/hsplit.html">hsplit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/is_native_dtype.html">is_native_dtype</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/median.html">median</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/nanmean.html">nanmean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/unravel_index.html">unravel_index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/quantile.html">quantile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/diagflat.html">diagflat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/kron.html">kron</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experimental/eig.html">eig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/binary_cross_entropy_with_logits.html">binary_cross_entropy_with_logits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/isin.html">isin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/msort.html">msort</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/sinc.html">sinc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/lcm.html">lcm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental/fmod.html">fmod</a></li>
@@ -165,14 +165,18 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/converters.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stateful/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/module.html">Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/sequential.html">Sequential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/sequential.html">Sequential</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Nested array</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../nested_array/nested_array.html">Nested array</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -526,7 +530,7 @@ indicating the per-dimensio paddings.</p></li>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">12.</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">avg_pool2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;SAME&#39;</span><span class="p">))</span>
 <span class="go">ivy.array([[[[ 1.,  2.],</span>
 <span class="go">         [ 3.,  4.],</span>
@@ -540,7 +544,7 @@ indicating the per-dimensio paddings.</p></li>
 </dd>
 </dl>
 </div></blockquote>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">48</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">48.</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">avg_pool2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;VALID&#39;</span><span class="p">))</span>
 <span class="go">ivy.array([[[[ 8.,  9.]],</span>
 </pre></div>
@@ -667,7 +671,7 @@ that the inputs broadcast to.</p></li>
 <dd class="field-odd"><p><em>ret</em> – The binary cross entropy with logits loss between the given distributions.</p>
 </dd>
 </dl>
-<p class="rubric">Functional Examples</p>
+<p class="rubric">Examples</p>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.8</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">])</span>
@@ -689,14 +693,6 @@ that the inputs broadcast to.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">binary_cross_entropy_with_logits</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">pos_weight</span><span class="o">=</span><span class="n">pos_weight</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="go">ivy.array([[2.672, 0.002, 0.029, 5.305]])</span>
-</pre></div>
-</div>
-<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> input:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">native_array</span><span class="p">([</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">binary_cross_entropy_with_logits</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="go">ivy.array([1.541, 0.168, 2.305, 0.437])</span>
 </pre></div>
 </div>
 <p>With a mix of <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> inputs:</p>
@@ -726,15 +722,6 @@ that the inputs broadcast to.</p></li>
 <span class="go">{</span>
 <span class="go">    a: ivy.array([0.024, 3.822, 0.263])</span>
 <span class="go">}</span>
-</pre></div>
-</div>
-<p class="rubric">Instance Method Examples</p>
-<p>Using <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instance method:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.8</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="mf">12.2</span><span class="p">,</span> <span class="mf">7.2</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">binary_cross_entropy_with_logits</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="go">ivy.array([0.153, 0.006, 12.205, 7.201])</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -2361,24 +2348,34 @@ indicating the per-dimensio paddings.</p></li>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">12.</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">max_pool2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;SAME&#39;</span><span class="p">))</span>
 <span class="go">ivy.array([[[[ 2,  3],</span>
-<span class="go"> [ 4,  5],</span>
-<span class="go"> [ 4,  5]]],</span>
-<span class="go">[[[ 8,  9],</span>
-<span class="go"> [10, 11],</span>
-<span class="go"> [10, 11]]]])</span>
+<span class="go">         [ 4,  5],</span>
+<span class="go">         [ 4,  5]]],</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">48</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<blockquote>
+<div><dl class="simple">
+<dt>[[[ 8,  9],</dt><dd><p>[10, 11],
+[10, 11]]]])</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">48.</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">max_pool2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;VALID&#39;</span><span class="p">))</span>
 <span class="go">ivy.array([[[[16, 17]],</span>
-<span class="go">[[22, 23]]],</span>
-<span class="go">[[[40, 41]],</span>
-<span class="go">[[46, 47]]]])</span>
 </pre></div>
 </div>
+<blockquote>
+<div><blockquote>
+<div><p>[[22, 23]]],</p>
+</div></blockquote>
+<p>[[[40, 41]],</p>
+<blockquote>
+<div><p>[[46, 47]]]])</p>
+</div></blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py function">
